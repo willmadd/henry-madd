@@ -8,7 +8,7 @@ const HomePageComponent = ({ t, article }) => {
   return (
     <>
     <Box>
-      <Typography>
+      <Typography variant="h1">
 
     {t('welcome to')}
       </Typography>
