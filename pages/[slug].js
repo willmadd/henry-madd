@@ -2,7 +2,7 @@ import client from "../client";
 import { PortableText } from "@portabletext/react";
 
 const ArticlePage = ({ article, router }) => {
-  console.log(article);
+  // console.log(article);
   return (
     <>
       <h1>{article.title}</h1>

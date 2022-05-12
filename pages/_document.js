@@ -11,8 +11,10 @@ class MyDocument extends Document {
             href="https://fonts.gstatic.com"
             crossOrigin={true}
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Orelega+One&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Faustina:wght@800&family=Poiret+One&display=swap"
             rel="stylesheet"
           />
         </Head>

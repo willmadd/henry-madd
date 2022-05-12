@@ -3,7 +3,7 @@ import sanityClient from '@sanity/client';
 // const client = sanityClient.withConfig({apiVersion: '2021-06-07'})
 
 export default sanityClient({
-  projectId: '0juyd8n6',
+  projectId: 'b9stqgf7',
   dataset: 'production',
   useCdn: true,
   apiVersion: 'v1',

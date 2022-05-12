@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 const HomePageContainer = (props) => {
   const { t } = useTranslation();
-
+('PP',props)
   const containerFunctions = { t };
 
   const containerProps = {};

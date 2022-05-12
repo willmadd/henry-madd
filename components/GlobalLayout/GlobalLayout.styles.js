@@ -1,5 +1,6 @@
 export default {
 wrapper:{
-  backgroundColor: 'lightblue'
-}
+  // backgroundColor: 'lightblue'
+},
+page:{backgroundColor:'background.main'}
 };

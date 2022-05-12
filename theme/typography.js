@@ -1,37 +1,42 @@
 import { createTheme } from "@mui/material/styles";
 import theme from "./breakpoints";
+import {black} from "./colors";
 
 const themeTypography = createTheme({
   typography: {
-    fontFamily: "'Orelega One', cursive",
+    fontFamily: "'Faustina', serif",
+    color: black[400],
     h1: {
-      fontFamily: "'Orelega One', cursive",
+      fontFamily: "'Faustina', serif",
       letterSpacing: "-1%",
       fontWeight: 400,
       fontSize: 32,
       lineHeight: 4 / 3,
+      color: black[400],
       [theme.breakpoints.up("md")]: {
         fontSize: 80,
         lineHeight: 6 / 5,
       },
     },
     h2: {
-      fontFamily: "'Orelega One', cursive",
+      fontFamily: "'Faustina', serif",
       letterSpacing: "-1%",
       fontSize: 28,
       fontWeight: 400,
       lineHeight: 29 / 21,
+      color: black[400],
       [theme.breakpoints.up("md")]: {
         fontSize: 48,
         lineHeight: 6 / 5,
       },
     },
     h3: {
-      fontFamily: "'Orelega One', cursive",
+      fontFamily: "'Faustina', serif",
       fontSize: 32,
       letterSpacing: "-1%",
       fontWeight: 400,
       lineHeight: 5 / 4,
+      color: black[400],
       [theme.breakpoints.up("md")]: {
         fontSize: 38,
         lineHeight: 6 / 5,
@@ -39,16 +44,17 @@ const themeTypography = createTheme({
       },
     },
     h4: {
-      fontFamily: "'Orelega One', cursive",
+      fontFamily: "'Faustina', serif",
       fontSize: 20,
       lineHeight: 8 / 5,
+      color: black[400],
       [theme.breakpoints.up("md")]: {
         fontSize: 24,
         lineHeight: 8 / 6,
       },
     },
     h5: {
-      fontFamily: "'Orelega One', cursive",
+      fontFamily: "'Faustina', serif",
       fontSize: 18,
       lineHeight: 16 / 9,
       fontWeight: 700,
@@ -58,7 +64,8 @@ const themeTypography = createTheme({
       },
     },
     body1: {
-      fontFamily: "'Montserrat', sans-serif",
+      color: black[400],
+      fontFamily: "'Poiret One', cursive",
       fontSize: 14,
       lineHeight: 12 / 7,
       fontWeight: 400,
@@ -69,7 +76,7 @@ const themeTypography = createTheme({
     },
 
     label: {
-      fontFamily: "'Montserrat', sans-serif",
+      fontFamily: "'Poiret One', cursive",
       fontSize: 14,
       lineHeight: 12 / 7,
       fontWeight: 400,
@@ -79,20 +86,20 @@ const themeTypography = createTheme({
       },
     },
     caption: {
-      fontFamily: "'Montserrat', sans-serif",
+      fontFamily: "'Poiret One', cursive",
       fontSize: 12,
       lineHeight: 4 / 3,
       fontWeight: 400,
     },
     strong: {
-      fontFamily: "'Montserrat', sans-serif",
+      fontFamily: "'Poiret One', cursive",
       fontSize: 16,
       lineHeight: 8 / 6,
       fontWeight: 700,
     },
     button: {
       fontWeight: 700,
-      fontFamily: "'Montserrat', sans-serif",
+      fontFamily: "'Poiret One', cursive",
     },
   },
 });
