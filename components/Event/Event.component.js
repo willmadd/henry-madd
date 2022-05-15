@@ -13,72 +13,89 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import Link from "@mui/material/Link";
 import Rating from "@mui/material/Rating";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { RemoveFromQueue } from "@mui/icons-material";
 
 const EventComponent = ({ t, event }) => {
   const { title, categories, body, mainImage, shows, reviews } = event;
   const imageProps = useNextSanityImage(client, mainImage);
   return (
     <Box sx={styles.wrapper}>
-      <Typography variant="h3">{t(title)}</Typography>
-      {categories.map((cat) => (
-        // <Chip color="primary" label="Chip Outlined" variant="outlined" />
-        // <Typography variant="h3">{t(cat)}</Typography>
-        <Chip
-          key={cat}
-          label={cat}
-          sx={styles.chip}
-          color={"info"}
-          variant={"filled"}
-          size={"small"}
-        />
-      ))}
-      <Grid container spacing={4}>
-        <Grid item xs={6} sx={styles.eventImage}>
-          <Img {...imageProps} layout="responsive" objectFit={"cover"} />
-          {reviews.map(({ from, quote, reviewLink, stars }) => {
-            return (
-              <Box key={quote} sx={styles.reviewSection}>
-                <Typography variant="h6">{t(from)}</Typography>
-                <Box sx={styles.review}>
-
-                <Typography variant="caption" sx={styles.caption}>{t(`"${quote}"`)}</Typography>
-                <Rating name="read-only" value={stars} readOnly />
-                </Box>
-              </Box>
-            );
-          })}
-        </Grid>
-        <Grid item xs={6}>
-          <PortableText value={body} />
+      <Grid container spacing={8}>
+        <Grid item xs={12} md={6}>
+          <Typography variant="h3">{t(title)}</Typography>
+          <Box sx={styles.chipArea}>
+            {categories.map((cat) => (
+              <Chip
+                key={cat}
+                label={cat}
+                sx={styles.chip}
+                color={"info"}
+                variant={"filled"}
+                size={"small"}
+              />
+            ))}
+          </Box>
+          <PortableText
+            value={body}
+            components={{
+              block: {
+                normal: ({ children }) => (
+                  <Typography variant="body1" sx={styles.p}>
+                    {children}
+                  </Typography>
+                ),
+              },
+            }}
+          />
+          <Typography
+            sx={styles.performancesText}
+            variant={"h3"}
+            color={"highlight.main"}
+          >
+            {t("Performances")}
+          </Typography>
+          <Box sx={styles.showsArea}>
+            
           {shows.map(
-            ({
-              buyTicketsLink,
-              eventLink,
-              eventName,
-              eventStartTime,
-              venue,
-            }) => {
+            (
+              { buyTicketsLink, eventLink, eventName, eventStartTime, venue },
+              i
+            ) => {
+              const dateString = `${new Date(eventStartTime).toLocaleDateString(
+                "en-GB",
+                {
+                  weekday: "short",
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                  hour: "numeric",
+                  minute: "numeric",
+                }
+              )}`;
               return (
                 <Box
                   key={`${eventStartTime}-${eventName}`}
                   sx={styles.eventList}
                 >
                   <Box sx={styles.eventHead}>
-                    <Typography variant="h6">{t(eventName)}</Typography>
+                    <Typography variant="h4">{t(eventName)}</Typography>
+                  </Box>
+                  <Box sx={styles.eventHeadDate}>
                     <Typography variant="body1" sx={styles.date}>
-                      {` - ` +
-                        t(
-                          new Date(eventStartTime).toLocaleDateString("en-GB", {
-                            weekday: "short",
-                            year: "numeric",
-                            month: "short",
-                            day: "numeric",
-                            hour: "numeric",
-                            minute: "numeric",
-                          })
-                        )}
+                      {`${dateString}`}
                     </Typography>
+                    {buyTicketsLink && (
+                      <Button
+                        size={"small"}
+                        href={buyTicketsLink}
+                        variant={"contained"}
+                        endIcon={<ChevronRightIcon />}
+                        color={"black"}
+                      >
+                        <Typography sx={styles.buttonLbl} variant="h6">
+                          {t("Get Tickets")}
+                        </Typography>
+                      </Button>
+                    )}
                   </Box>
                   <Box sx={styles.eventHeadDate}>
                     <Typography variant="body1">{t(venue)}</Typography>
@@ -90,34 +107,39 @@ const EventComponent = ({ t, event }) => {
                           href={eventLink}
                           variant={"text"}
                           endIcon={<ChevronRightIcon />}
-                          color={'action'}
+                          color={"background"}
                         >
                           <Typography sx={styles.buttonLbl} variant="h6">
                             {t("More info")}
                           </Typography>
                         </Button>
                       )}
-                      {buyTicketsLink && (
-                        <Button
-                          size={"small"}
-                          href={buyTicketsLink}
-                          variant={"text"}
-                          endIcon={<ChevronRightIcon />}
-                          color={'action'}
-                        >
-                          <Typography sx={styles.buttonLbl} variant="h6">
-                            {t("Get Tickets")}
-                          </Typography>
-                        </Button>
-                      )}
                     </Box>
                   </Box>
-                  {/* <Typography variant="body1">{t(eventLink)}</Typography>
-                  <Typography variant="body1">{t(buyTicketsLink)}</Typography> */}
+                  {shows.length - 1 !== i && <Box sx={styles.divider} />}
                 </Box>
               );
             }
           )}
+          </Box>
+        </Grid>
+        <Grid item xs={12} md={6} sx={styles.eventImage}>
+          <Img {...imageProps} layout="responsive" objectFit={"cover"} />
+          {reviews.map(({ from, quote, reviewLink, stars }) => {
+            return (
+              <Box key={quote} sx={styles.reviewSection}>
+                <Typography variant="h6" sx={styles.reviewBody}>
+                  {t(from)}
+                </Typography>
+                <Box sx={styles.review}>
+                  <Typography variant="caption" sx={styles.caption}>
+                    {t(`"${quote}"`)}
+                  </Typography>
+                  <Rating name="read-only" value={stars} readOnly />
+                </Box>
+              </Box>
+            );
+          })}
         </Grid>
       </Grid>
     </Box>

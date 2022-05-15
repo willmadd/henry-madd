@@ -9,7 +9,7 @@ const themePalette = createTheme({
     type: 'light',
     primary: {
       light: blue[200],        //#d0ebf1,
-      main: '#4A6163',         //#005072,
+      main: '#333333',         //#005072,
       dark: blue[800], 
       contrastText: blue[0]    //#FFFFFF        //#013A56,
     },
@@ -22,9 +22,22 @@ const themePalette = createTheme({
     action:{
       main:'#ef6368'
     },
+    earth:{
+      main: '#cc8b65'
+    },
+    photo:{
+      main: '#E3DCD2'
+    },
+    highlight:{
+      main:'#FFC94B'
+    },
     info:{
       main: '#FFC94B',
       contrastText: '#4A6163'    //#FFFFFF
+    },
+    black:{
+      main: black[400],
+      contrastText: '#E3DCD2'
     },
     tertiary:{
       light: green[300],       //#A5D867,
@@ -40,8 +53,10 @@ const themePalette = createTheme({
       secondary: blue[600],    //#005072
     },
     background:{
-      // main:'#f5f1EA'
-      main: '#F9FAFA'
+      // main:'f5f1EA#'
+      // main: '#F9FAFA'
+      // main: '#806043
+      main: '#013328'
     },
     info: {
       main: orange[500],       //#ed8b00

@@ -1,0 +1,1 @@
+export { default } from './Workshops.container.js'

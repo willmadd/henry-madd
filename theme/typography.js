@@ -4,12 +4,12 @@ import {black} from "./colors";
 
 const themeTypography = createTheme({
   typography: {
-    fontFamily: "'Faustina', serif",
+    fontFamily: "'Poiret One', cursive",
     color: black[400],
     h1: {
-      fontFamily: "'Faustina', serif",
+      fontFamily: "'Poiret One', cursive",
       letterSpacing: "-1%",
-      fontWeight: 400,
+      fontWeight: 1000,
       fontSize: 32,
       lineHeight: 4 / 3,
       color: black[400],
@@ -19,10 +19,10 @@ const themeTypography = createTheme({
       },
     },
     h2: {
-      fontFamily: "'Faustina', serif",
+      fontFamily: "'Poiret One', cursive",
       letterSpacing: "-1%",
       fontSize: 28,
-      fontWeight: 400,
+      fontWeight: 800,
       lineHeight: 29 / 21,
       color: black[400],
       [theme.breakpoints.up("md")]: {
@@ -31,12 +31,12 @@ const themeTypography = createTheme({
       },
     },
     h3: {
-      fontFamily: "'Faustina', serif",
+      fontFamily: "'Poiret One', cursive",
       fontSize: 32,
       letterSpacing: "-1%",
       fontWeight: 400,
       lineHeight: 5 / 4,
-      color: black[400],
+      color: '#E3DCD2',
       [theme.breakpoints.up("md")]: {
         fontSize: 38,
         lineHeight: 6 / 5,
@@ -44,7 +44,7 @@ const themeTypography = createTheme({
       },
     },
     h4: {
-      fontFamily: "'Faustina', serif",
+      fontFamily: "'Poiret One', cursive",
       fontSize: 20,
       lineHeight: 8 / 5,
       color: black[400],
@@ -54,7 +54,7 @@ const themeTypography = createTheme({
       },
     },
     h5: {
-      fontFamily: "'Faustina', serif",
+      fontFamily: "'Poiret One', cursive",
       fontSize: 18,
       lineHeight: 16 / 9,
       fontWeight: 700,
@@ -63,20 +63,31 @@ const themeTypography = createTheme({
         lineHeight: 8 / 5,
       },
     },
-    body1: {
-      color: black[400],
+    h6: {
       fontFamily: "'Poiret One', cursive",
+      fontSize: 16,
+      lineHeight: 16 / 9,
+      fontWeight: 700,
+      [theme.breakpoints.up("md")]: {
+        fontSize: 16,
+        lineHeight: 8 / 5,
+      },
+    },
+    body1: {
+      color: 'photo.main',
+      fontFamily: "'Open Sans', sans-serif",
       fontSize: 14,
       lineHeight: 12 / 7,
       fontWeight: 400,
       [theme.breakpoints.up("md")]: {
         fontSize: 16,
         lineHeight: 8 / 6,
+        letterSpacing: 0.25
       },
     },
 
     label: {
-      fontFamily: "'Poiret One', cursive",
+      fontFamily: "'Open Sans', sans-serif",
       fontSize: 14,
       lineHeight: 12 / 7,
       fontWeight: 400,
@@ -86,13 +97,13 @@ const themeTypography = createTheme({
       },
     },
     caption: {
-      fontFamily: "'Poiret One', cursive",
+      fontFamily: "'Open Sans', sans-serif",
       fontSize: 12,
       lineHeight: 4 / 3,
       fontWeight: 400,
     },
     strong: {
-      fontFamily: "'Poiret One', cursive",
+      fontFamily: "'Open Sans', sans-serif",
       fontSize: 16,
       lineHeight: 8 / 6,
       fontWeight: 700,

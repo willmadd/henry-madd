@@ -3,7 +3,7 @@ export default {
   100: '#E6E6E6',
   200: '#D1D3D4',
   300: '#605f5f',
-  400: '#1d242c',
+  400: '#100c0D',
   500: '#FFFFFF',
   600: '#FFFFFF',
   700: '#FFFFFF',

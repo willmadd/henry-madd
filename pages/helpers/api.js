@@ -8,7 +8,7 @@ const api = {
   },
   getPosts: async () => {
     return client.fetch(
-      `*[_type == "post"]{title, slug, mainImage, categories,body, publishedAt}`
+      `*[_type == "post"]{title, slug, mainImage, categories,body, publishedAt, excerpt}`
     );
   },
   getPortfolio: async () => {
