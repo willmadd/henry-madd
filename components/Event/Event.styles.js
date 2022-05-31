@@ -1,4 +1,4 @@
-export default {
+const styles = {
   wrapper: {
     mb: 4,
   },
@@ -16,22 +16,44 @@ export default {
   date: {
     ml: 1,
   },
-  action: { ml: 2 },
+  // action: { ml: 2 },
   buttonLbl: { fontSize: 12 },
   eventList: {
-    mb: 2,
+    px: 4,
+    backgroundColor: "photo.main",
+    pb:4,
+  },
+  performancesText: {
+    mb: 4,
+
+  },
+  showsArea:{
+    pt:4,
+    backgroundColor: "photo.main",
   },
   eventImage: { my: 4 },
-  review:{
-    display: 'flex',
-    alignItems: 'center'
+  review: {
+    display: "flex",
+    alignItems: "center",
   },
-  reviewSection:{
-    mt:2
+  chipArea: { mb: 4, mt: 2 },
+  reviewSection: {
+    my: 4,
   },
-  caption:{
-    fontStyle: 'italic',
+  divider: { mt:2, height: "1px", backgroundColor: "background.main", width: 1 },
+  caption: {
+    fontStyle: "italic",
     fontSize: 14,
-    mr:2,
-  }
+    mr: 2,
+    color: "photo.main",
+  },
+  reviewBody: {
+    color: "photo.main",
+  },
+  p: {
+    mb: 4,
+    color: "photo.main",
+  },
 };
+
+export default styles;

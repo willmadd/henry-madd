@@ -1,16 +1,27 @@
 import PortfolioSectionComponent from "./PortfolioSection.component";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
+import React, { useState } from "react";
 
 const PortfolioSectionContainer = (props) => {
+  const [modalContent, setModalContent] = useState([]);
+
   const { t } = useTranslation();
 
-  const containerFunctions = { t };
+  const handleCloseModal = () =>{
+    setModalContent([])
+  }
 
-  const containerProps = {};
+  const containerFunctions = { t, handleCloseModal, setModalContent };
+
+  const containerProps = {modalContent};
 
   return (
-    <PortfolioSectionComponent {...props} {...containerProps} {...containerFunctions} />
+    <PortfolioSectionComponent
+      {...props}
+      {...containerProps}
+      {...containerFunctions}
+    />
   );
 };
 export default PortfolioSectionContainer;

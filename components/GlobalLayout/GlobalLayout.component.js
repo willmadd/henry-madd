@@ -8,6 +8,7 @@ import HeadImports from "../HeadImports";
 const GlobalLayoutComponent = ({ t, children }) => {
   return (
     <Box sx={styles.page}>
+      <HeadImports />
       <Container sx={styles.wrapper}>{children}</Container>
     </Box>
   );
