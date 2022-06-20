@@ -23,10 +23,10 @@ const styles = {
     transformOrigin: "0% 50%",
     translateY: "-100vh",
     position: "fixed",
-    display: "flex",
     alignItems: "center",
     borderBottom: "1px solid earth.main",
     zIndex: 30986730967456,
+    display:{xs:'none', md:'flex'}
   },
   button: {
     animation: `${spin} 2s`,
