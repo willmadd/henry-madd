@@ -2,9 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import HomePage from '../components/HomePage'
 import styles from '../styles/Home.module.css'
-import api from './helpers/api'
+import api from '../helpers/api'
 
 export default function Home(props) {
+  // console.log('featureImages', props.featureImages)
   return (
     // <div className={styles.container}>
       <HomePage {...props}/>

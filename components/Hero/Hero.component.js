@@ -1,43 +1,67 @@
 import React from "react";
 import styles from "./Hero.styles";
-import { Box, Link, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
 
-import Image from "next/image";
+import Img from "next/image";
 import { PortableText } from "@portabletext/react";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import Container from "@mui/material/Container";
+import { useNextSanityImage } from "next-sanity-image";
+import client from "../../client";
+import one from "./img/one-1.webp";
 
-const HeroComponent = ({ t, image, text }) => {
+const HeroComponent = ({
+  t,
+  image,
+  text,
+  sectionRef,
+}) => {
   return (
-    <Box sx={styles.wrapper}>
+    <Container sx={styles.wrapper} ref={sectionRef}>
       <Box sx={styles.centerPosition}>
         <Box sx={styles.imageSpacer}>
           <Box sx={styles.image}>
-            <Image
+            <Img
               src={image}
-              height={'100%'}
-              width={'100%'}
+              height={"100%"}
+              width={"100%"}
               layout="responsive"
               alt=""
-              objectFit={'cover'}
+              objectFit={"cover"}
+              placeholder="blur"
             />
-          <Box sx={styles.socials}>
-            <Typography sx={styles.followMe} variant={'h5'} color={"earth"}>{t('Follow Me')}</Typography>
-            <Link
-              href="https://www.instagram.com/henrymaddpoet/"
-              target="_blank"
-              rel="noopener"
-            >
-              <InstagramIcon color={"earth"} sx={styles.socialIcon}/>
-            </Link>
-            <Link
+            <Box sx={styles.socials}>
+              <Typography sx={styles.followMe} variant={"h5"} color={"earth"}>
+                {t("Follow Me")}
+              </Typography>
+              <Link
+                href="https://www.instagram.com/henrymaddpoet/"
+                target="_blank"
+                rel="noopener"
+                aria-label={"Instagram"}
+              >
+                <InstagramIcon
+                  color={"highlight"}
+                  sx={styles.socialIcon}
+                  alt="Instagram"
+                />
+              </Link>
+              <Link
                 href="https://www.facebook.com/HMADDSpokenWord/"
                 target="_blank"
                 rel="noopener"
+                aria-label={"Facebook"}
               >
-                <FacebookIcon color={"earth"} sx={styles.socialIcon}/>
+                <FacebookIcon
+                  color={"highlight"}
+                  sx={styles.socialIcon}
+                  alt="Facebook"
+                />
               </Link>
-          </Box>
+            </Box>
           </Box>
         </Box>
         <Box sx={styles.info}>
@@ -61,8 +85,13 @@ const HeroComponent = ({ t, image, text }) => {
           />
         </Box>
       </Box>
-    </Box>
+    </Container>
   );
 };
 
 export default HeroComponent;
+
+const FlickerImage = ({ img }) => {
+  const imageProps = useNextSanityImage(client, img.featureImage);
+  return <Img {...imageProps} />;
+};

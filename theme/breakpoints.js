@@ -7,6 +7,7 @@ const themeBreakpoints = createTheme({
         sm: 600,
         md: 900,
         lg: 1200,
+        mdl: 1296,
         xl: 1536,
       },
     },

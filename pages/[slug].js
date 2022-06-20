@@ -1,12 +1,10 @@
 import client from "../client";
 import { PortableText } from "@portabletext/react";
-
-const ArticlePage = ({ article, router }) => {
-  // console.log(article);
+import PortfolioPage from "../components/PotfolioPage";
+const ArticlePage = ({ article, router, ...rest }) => {
   return (
     <>
-      <h1>{article.title}</h1>
-      <PortableText value={article.body} />
+      <PortfolioPage {...article} />
     </>
   );
 };
@@ -33,7 +31,7 @@ export const getStaticPaths = async () => {
 
 export const getArticleContent = (slug) => {
   const article = client.fetch(
-    `*[_type == "post" && slug.current == $slug][0]{
+    `*[_type == "portfolio" && slug.current == $slug][0]{
       title,
       slug,
       mainImage,
@@ -47,6 +45,6 @@ export const getArticleContent = (slug) => {
 };
 
 export async function getArticlesSlugs() {
-  const articles = await client.fetch('*[_type == "post"]{slug}');
+  const articles = await client.fetch('*[_type == "portfolio"]{slug}');
   return articles;
 }

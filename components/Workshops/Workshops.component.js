@@ -6,20 +6,26 @@ import { PortableText } from "@portabletext/react";
 import { useNextSanityImage } from "next-sanity-image";
 import Img from "next/image";
 import client from "../../client";
-const WorkshopsComponent = ({ t, data, image }) => {
+const WorkshopsComponent = ({ t, data, image, sectionRef }) => {
   const imageProps = useNextSanityImage(client, image);
+
   return (
     <Box sx={styles.wrapper}>
-      <Typography variant={"h2"} sx={styles.title} color={"primary"}>
+      <Typography variant={"h2"} sx={styles.title} color={"tomato"}>
         {t("Workshops")}
       </Typography>
       <Box>
-        <Box sx={styles.textArea}>
+        <Box sx={styles.textArea} ref={sectionRef}>
           <PortableText
             components={{
               block: {
                 normal: ({ children }) => (
                   <Typography variant="body1" sx={styles.p}>
+                    {children}
+                  </Typography>
+                ),
+                h4: ({ children }) => (
+                  <Typography variant="body1" sx={styles.pBold}>
                     {children}
                   </Typography>
                 ),
@@ -33,6 +39,7 @@ const WorkshopsComponent = ({ t, data, image }) => {
               layout="responsive"
               // height={500}
               objectFit={"cover"}
+              alt={'Henry in jacket'}
             />
           </Box>
         </Box>

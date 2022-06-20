@@ -18,6 +18,31 @@ export default {
       },
     },
     {
+      name: "featureImages",
+      title: "Images",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "featureImage",
+              title: "Feature Image",
+              type: "image",
+              options: {
+                hotspot: true,
+              },
+            },
+            {
+              name: "altTag",
+              title: "Alt Tag",
+              type: "string",
+            },
+          ],
+        },
+      ],
+    },
+    {
       name: "heroImage",
       title: "Workshops Image",
       type: "image",

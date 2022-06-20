@@ -110,6 +110,11 @@ export default {
       type: "blockContent",
     },
     {
+      name: "crowdFunder",
+      title: "Crowd Funder",
+      type: "blockContent",
+    },
+    {
       name: "reviews",
       title: "Reviews",
       type: "array",

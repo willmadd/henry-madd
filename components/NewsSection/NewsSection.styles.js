@@ -1,6 +1,5 @@
-import { AppBlockingRounded } from "@mui/icons-material";
 
-export default {
+const styles = {
   wrapper: {
     // backgroundColor: 'lightblue'
   },
@@ -14,3 +13,5 @@ export default {
   },
   cardContent: { backgroundColor: "photo.main", height: 1 },
 };
+
+export default styles

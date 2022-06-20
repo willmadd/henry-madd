@@ -1,15 +1,24 @@
 import React from "react";
 import styles from "./GlobalLayout.styles";
 import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import HeadImports from "../HeadImports";
 
-const GlobalLayoutComponent = ({ t, children }) => {
+import Footer from "../Footer";
+
+const GlobalLayoutComponent = ({
+  t,
+  children,
+  refs,
+  handleMenuClick,
+}) => {
   return (
     <Box sx={styles.page}>
+      
       <HeadImports />
-      <Container sx={styles.wrapper}>{children}</Container>
+
+      <Box sx={styles.wrapper}>{children}</Box>
+      <Footer />
     </Box>
   );
 };

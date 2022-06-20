@@ -13,24 +13,32 @@ const HeroContainer = (props) => {
 
   const [heroImage, setHeroImage] = useState(0);
 
-  useEffect(() => {
-    document.addEventListener("mousemove", progressHeroImage);
-    document.addEventListener("mousewheel", progressHeroImage);
-    return () => {document.removeEventListener("mousemove", progressHeroImage)
-    document.addEventListener("mousewheel",progressHeroImage)};
-  }, []);
+  const makeRandNo = () => {
+    const number = Math.floor(Math.random() * images.length);
+    return number;
+
+  };
 
   const progressHeroImage = useCallback(
     throttle(
       () => {
-        const rndImage = Math.floor(Math.random() * images.length);
-        setHeroImage(rndImage);
+        let rndNumber = makeRandNo();
+        setHeroImage(rndNumber);
       },
       100,
       { leading: false }
     ),
-    [setHeroImage]
+    [setHeroImage, images.length]
   );
+
+  useEffect(() => {
+    document.addEventListener("mousemove", progressHeroImage);
+    document.addEventListener("mousewheel", progressHeroImage);
+    return () => {
+      document.removeEventListener("mousemove", progressHeroImage);
+      document.addEventListener("mousewheel", progressHeroImage);
+    };
+  }, []);
 
   const { t } = useTranslation();
 

@@ -25,6 +25,9 @@ const themePalette = createTheme({
     earth:{
       main: '#cc8b65'
     },
+    tomato:{
+    main: 'tomato',
+    },
     photo:{
       main: '#E3DCD2'
     },
@@ -56,7 +59,8 @@ const themePalette = createTheme({
       // main:'f5f1EA#'
       // main: '#F9FAFA'
       // main: '#806043
-      main: '#013328'
+      // main: '#013328'
+      main: black[400]
     },
     info: {
       main: orange[500],       //#ed8b00

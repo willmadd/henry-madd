@@ -1,12 +1,20 @@
+import { black } from "../../theme/colors";
+
 const styles = {
   wrapper: {
     mb: 4,
+    pl:{xs:0, md: 15, mdl: 0}
   },
-  chip: { mr: 2, mt: 2 },
+  chip: { mr: 2, mt: 2, backgroundColor:'tomato.main', color: black[400] },
   eventHead: {
     display: "flex",
     alignItems: "center",
     // justifyContent: 'space-between'
+  },
+  crowdFunder:{
+    backgroundColor:'rgba(227, 220, 210, 0.8)',
+    p:6,
+    mt:4
   },
   eventHeadDate: {
     display: "flex",
@@ -20,16 +28,19 @@ const styles = {
   buttonLbl: { fontSize: 12 },
   eventList: {
     px: 4,
-    backgroundColor: "photo.main",
+    // backgroundColor: "rgba(227, 220, 210, 0.8)",
     pb:4,
   },
   performancesText: {
     mb: 4,
 
   },
+  funding:{
+    mt: 12
+  },
   showsArea:{
     pt:4,
-    backgroundColor: "photo.main",
+    backgroundColor: "rgba(227, 220, 210, 0.8)",
   },
   eventImage: { my: 4 },
   review: {
@@ -54,6 +65,9 @@ const styles = {
     mb: 4,
     color: "photo.main",
   },
+  pFunding:{
+    color: 'black.main'
+  }
 };
 
 export default styles;

@@ -1,3 +1,6 @@
+import { black } from "../../theme/colors";
+import texture from "./img/t5.png";
+
 const styles = {
   wrapper: {
     display: "flex",
@@ -11,21 +14,26 @@ const styles = {
   },
   image: {
     width: { xs: 1, md: 460 },
-    height: { xs: 'calc(100vw - 32px)', md: 460 },
+    height: { xs: "calc(100vw - 32px)", md: 460 },
     boxShadow: 10,
     my: 24,
     mx: 24,
     zIndex: 2,
-    backgroundColor: "earth.main",
+    backgroundColor: "tomato.main",
+    borderRadius: 9999,
   },
   info: {
     m: { xs: 0, md: 12 },
     mb: { xs: 12 },
-    backgroundColor: "photo.main",
     p: { xs: 8, md: 10 },
     pl: { xs: 8, md: 16 },
     ml: { xs: 0, md: -30 },
+    backgroundImage: `url(${texture.src})`,
+    backgroundColor: black[400],
   },
+  activeImage: (isActive) => ({
+    display: isActive ? "block" : "none",
+  }),
   imageSpacer: {
     display: "flex",
     height: "100%",
@@ -38,6 +46,7 @@ const styles = {
     fontSize: 14,
     mb: 4,
     textAlign: "center",
+    color: "gold",
   },
   socialIcon: {
     height: 48,
@@ -50,7 +59,7 @@ const styles = {
   },
   followMe: {
     mr: 2,
-    color: "earth.main",
+    color: "highlight.main",
   },
   title: {
     textAlign: "center",

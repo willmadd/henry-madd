@@ -1,5 +1,7 @@
-export default {
+const styles = {
 wrapper:{
   backgroundColor: 'lightblue'
 }
 };
+
+export default styles

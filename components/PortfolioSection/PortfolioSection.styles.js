@@ -1,9 +1,10 @@
 const styles = {
   wrapper: {
     // backgroundColor: 'lightblue'
+    ml:{xs:0, md: 15, mdl: 0}
   },
   sectionTitle: {
-    color: "highlight.main",
+    // color: "highlight.main",
     mt: 24,
     mb: 8,
   },
@@ -22,6 +23,8 @@ const styles = {
     position: "relative",
     backgroundColor: "photo.main",
     p: 3,
+    display:'flex',
+    flexDirection: 'column',
     // mx:4,
     // mt: -4,
     zIndex: 4,

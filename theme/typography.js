@@ -12,7 +12,7 @@ const themeTypography = createTheme({
       fontWeight: 1000,
       fontSize: 32,
       lineHeight: 4 / 3,
-      color: black[400],
+      color: '#E3DCD2',
       [theme.breakpoints.up("md")]: {
         fontSize: 80,
         lineHeight: 6 / 5,
@@ -24,7 +24,7 @@ const themeTypography = createTheme({
       fontSize: 28,
       fontWeight: 800,
       lineHeight: 29 / 21,
-      color: black[400],
+      color: '#E3DCD2',
       [theme.breakpoints.up("md")]: {
         fontSize: 48,
         lineHeight: 6 / 5,
@@ -79,6 +79,7 @@ const themeTypography = createTheme({
       fontSize: 14,
       lineHeight: 12 / 7,
       fontWeight: 400,
+      color: '#E3DCD2',
       [theme.breakpoints.up("md")]: {
         fontSize: 16,
         lineHeight: 8 / 6,

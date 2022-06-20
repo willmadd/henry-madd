@@ -1,16 +1,23 @@
 import GlobalLayoutComponent from "./GlobalLayout.component";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
+import React, { useRef } from "react";
 
 const GlobalLayoutContainer = (props) => {
   const { t } = useTranslation();
 
+
+
   const containerFunctions = { t };
 
-  const containerProps = {};
+  const containerProps = { };
 
   return (
-    <GlobalLayoutComponent {...props} {...containerProps} {...containerFunctions} />
+    <GlobalLayoutComponent
+      {...props}
+      {...containerProps}
+      {...containerFunctions}
+    />
   );
 };
 export default GlobalLayoutContainer;

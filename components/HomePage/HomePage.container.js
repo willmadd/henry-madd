@@ -1,13 +1,36 @@
 import HomePageComponent from "./HomePage.component";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
+import React, { useRef } from "react";
 
 const HomePageContainer = (props) => {
   const { t } = useTranslation();
-('PP',props)
-  const containerFunctions = { t };
 
-  const containerProps = {};
+    const eventsRef = useRef();
+  const aboutRef = useRef();
+  const portfolioRef = useRef();
+  const workshopRef = useRef();
+  const contactRef = useRef();
+
+  const refs = { eventsRef, aboutRef, portfolioRef, workshopRef, contactRef };
+
+  const childrenWithProps = React.Children.map(props.children, (child) => {
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, { refs });
+    }
+    return child;
+  });
+
+  const handleMenuClick = (refName) => {
+    refs[refName].current.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
+
+  const containerFunctions = { t, handleMenuClick };
+
+  const containerProps = {childrenWithProps, refs};
 
   return (
     <HomePageComponent {...props} {...containerProps} {...containerFunctions} />

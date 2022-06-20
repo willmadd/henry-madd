@@ -10,14 +10,20 @@ import Img from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
 import { PortableText } from "@portabletext/react";
 
-const PortfolioSectionComponent = ({ t, data, modalContent, ...rest }) => {
+const PortfolioSectionComponent = ({
+  t,
+  data,
+  modalContent,
+  sectionRef,
+  ...rest
+}) => {
   return (
-    <>
+    <Box sx={styles.wrapper}>
       {modalContent.length > 0 && <Modal />}
-      <Typography variant={"h2"} sx={styles.sectionTitle}>
+      <Typography variant={"h2"} color={"tomato.main"} sx={styles.sectionTitle}>
         {t("Portfolio")}
       </Typography>
-      <Grid container spacing={4}>
+      <Grid container spacing={4} ref={sectionRef}>
         {data.map((portfolioItem) => {
           return (
             <PortfolioItem
@@ -29,24 +35,26 @@ const PortfolioSectionComponent = ({ t, data, modalContent, ...rest }) => {
           );
         })}
       </Grid>
-    </>
+      </Box>
   );
 };
 
 export default PortfolioSectionComponent;
 
-const PortfolioItem = ({ mainImage, title, body, t, setModalContent }) => {
+const PortfolioItem = ({ mainImage, title, body, t, setModalContent, slug }) => {
+  // console.log(rest);
   const imageProps = useNextSanityImage(client, mainImage);
   return (
     <Grid item xs={12} sm={12} md={6} lg={4} sx={styles.portfolioItem}>
       <Box sx={styles.imageWrapper}>
-        <Img {...imageProps} layout="fill" objectFit={"cover"} />
+        <Img {...imageProps} layout="fill" objectFit={"cover"} alt={`${title} henry madd`}/>
       </Box>
       <Box sx={styles.titleArea}>
         <Typography variant={"h5"} sx={styles.title}>
           {title}
         </Typography>
-        <Button onClick={() => setModalContent(body)}>{t("Learn More")}</Button>
+        <Box sx={{ flex:1 }}></Box>
+        <Button href={`/${slug.current}`}>{t("View page")}</Button>
       </Box>
     </Grid>
   );
