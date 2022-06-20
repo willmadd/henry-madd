@@ -14,10 +14,9 @@ const StartAnimationContainer = (props) => {
       if (window?.sessionStorage?.getItem("playedAnimation")) {
         setPlayedAnimations(true);
       } else {
-        console.log("first view");
+
         setTimeout(() => {
-          window?.sessionStorage?.setItem("playedAnimation", "true"),
-            console.log("set item");
+          window?.sessionStorage?.setItem("playedAnimation", "true");
         }, 10000);
       }
     }

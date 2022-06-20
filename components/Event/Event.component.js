@@ -90,6 +90,7 @@ const EventComponent = ({ t, event, sectionRef }) => {
                           variant={"contained"}
                           endIcon={<ChevronRightIcon />}
                           color={"highlight"}
+                          target={'_blank'}
                         >
                           <Typography sx={styles.buttonLbl} variant="h6">
                             {t("Get Tickets")}
@@ -109,7 +110,7 @@ const EventComponent = ({ t, event, sectionRef }) => {
                             href={eventLink}
                             variant={"text"}
                             endIcon={<ChevronRightIcon />}
-                            
+                            target={'_blank'}
                             // color={"tomato"}
                           >
                             <Typography sx={styles.buttonLbl} variant="h6">

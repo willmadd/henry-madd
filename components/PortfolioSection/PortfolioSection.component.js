@@ -42,7 +42,7 @@ const PortfolioSectionComponent = ({
 export default PortfolioSectionComponent;
 
 const PortfolioItem = ({ mainImage, title, body, t, setModalContent, slug }) => {
-  // console.log(rest);
+
   const imageProps = useNextSanityImage(client, mainImage);
   return (
     <Grid item xs={12} sm={12} md={6} lg={4} sx={styles.portfolioItem}>

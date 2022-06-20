@@ -13,7 +13,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 const NewsSectionComponent = ({ t, data }) => {
-  console.log("data", data);
+
   return (
     <>
       <Typography variant={"h2"} sx={styles.sectionTitle}>
