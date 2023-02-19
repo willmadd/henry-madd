@@ -13,7 +13,7 @@ const ContactFormComponent = ({ t, sectionRef }) => {
 
   return (
     <Box sx={styles.wrapper} ref={sectionRef}>
-      <Typography variant={"h2"} sx={styles.title} color={"tomato"}>
+      <Typography variant={"h2"} sx={styles.title} color={"highlight.main"}>
         {t("Contact Me")}
       </Typography>
       <Grid container spacing={12}>

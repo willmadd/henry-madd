@@ -4,6 +4,6 @@ module.exports = {
 		domains: ['cdn.sanity.io', '/'],
     loader: 'akamai',
     path: '',
-    // formats: ['image/webp'],
+    formats: ['image/webp'],
 	}
 }

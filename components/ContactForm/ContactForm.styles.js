@@ -6,7 +6,6 @@ const styles = {
   },
   title: {
     mb: 8,
-    color: "tomato.main",
   },
   body:{
     mt:12,

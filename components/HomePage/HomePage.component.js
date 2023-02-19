@@ -42,7 +42,7 @@ const HomePageComponent = ({
         <Box sx={styles.about}></Box>
         <Typography
           variant={"h2"}
-          color={"tomato.main"}
+          color={"highlight.main"}
           sx={styles.sectionTitle}
         >
           {t("Events")}

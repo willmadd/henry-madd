@@ -10,7 +10,7 @@ const styles = {
   },
   title: {
     mb: 8,
-    color: "tomato.main",
+
   },
   textArea: {
     width: { xs: 1, md: "60%" },

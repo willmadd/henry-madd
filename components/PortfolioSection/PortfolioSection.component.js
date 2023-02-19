@@ -20,7 +20,7 @@ const PortfolioSectionComponent = ({
   return (
     <Box sx={styles.wrapper}>
       {modalContent.length > 0 && <Modal />}
-      <Typography variant={"h2"} color={"tomato.main"} sx={styles.sectionTitle}>
+      <Typography variant={"h2"} color={"highlight.main"} sx={styles.sectionTitle}>
         {t("Portfolio")}
       </Typography>
       <Grid container spacing={4} ref={sectionRef}>

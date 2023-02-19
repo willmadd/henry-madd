@@ -65,6 +65,12 @@ const styles = {
     mb: 4,
     color: "photo.main",
   },
+    h3: {
+    mb: 4,
+    color: "tomato.main",
+    textSize:10,
+    size:10,
+  },
   pFunding:{
     color: 'black.main'
   }

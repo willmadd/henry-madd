@@ -110,6 +110,11 @@ export default {
       type: "blockContent",
     },
     {
+      name: "snowsmith",
+      title: "The Snowsmith",
+      type: "blockContent",
+    },
+    {
       name: "crowdFunder",
       title: "Crowd Funder",
       type: "blockContent",

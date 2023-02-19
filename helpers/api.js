@@ -20,7 +20,7 @@ const api = {
   getEventBySlug:  (slug) => {
     
     return   client.fetch(
-        `*[_type == "event" && slug.current == "${slug}"][0]{title, slug, mainImage, "categories":categories[]->title, shows, body, crowdFunder, reviews}`
+        `*[_type == "event" && slug.current == "${slug}"][0]{title, slug, mainImage, "categories":categories[]->title, shows, body, crowdFunder, reviews, snowsmith}`
       );
   }
 };

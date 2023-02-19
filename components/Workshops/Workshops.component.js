@@ -11,7 +11,7 @@ const WorkshopsComponent = ({ t, data, image, sectionRef }) => {
 
   return (
     <Box sx={styles.wrapper}>
-      <Typography variant={"h2"} sx={styles.title} color={"tomato"}>
+      <Typography variant={"h2"} sx={styles.title} color={"highlight.main"}>
         {t("Workshops")}
       </Typography>
       <Box>
